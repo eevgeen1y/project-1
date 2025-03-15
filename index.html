@@ -20,6 +20,16 @@
     </div>
 
     <div id="nav">
+        <label for="search"> </label>
+        <input type="text" id="search" placeholder="Введіть слово">
+        <button id="buttonSrc" onclick="search()"> <img src="img/search.png" width="15"> </button>
+        <script>
+            function search() {
+                let searchTerm = document.getElementById('search').value;
+                let url = 'https://store.steampowered.com/search/?term=' + encodeURIComponent(searchTerm) + '&supportedlang=russian%2Cenglish%2Cukrainian&ndl=1'
+                window.location.href = url;
+            }
+        </script>
         <details>
             <summary>Магазин</summary>
             <ul>
@@ -68,7 +78,7 @@
                     </a>
                 </li>
                 <em>
-                    Жанры
+                    <p style="color: rgb(0, 174, 255);">Жанры</p>
                 </em>
                 <li>
                     <a href="https://store.steampowered.com/category/action">

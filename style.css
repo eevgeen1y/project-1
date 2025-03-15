@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+  }
+
 body {
     background-color: rgb(63, 85, 104);
     margin: 0;
@@ -14,6 +18,24 @@ body {
     text-align: right;
     display: block;
     padding: 10px;
+}
+
+#search{
+    width: 20%;
+    padding: 8px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+}
+
+#buttonSrc{
+    border: none;
+    border-radius: 5px;
+    background: #1b75bc;
+    cursor: pointer;
+    padding: 8px;
+    width: 40px;
 }
 
 #nav {
@@ -60,6 +82,10 @@ body {
     text-align: center;
     padding: 20px;
     color: white;
+    bottom: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 #footer img {
@@ -105,12 +131,25 @@ label {
 }
 
 input {
-    width: 100%;
+    width: 82%;
     padding: 8px;
     border: 1px solid #555;
     border-radius: 5px;
     background: #222;
     color: white;
+}
+
+#buttonEye{
+    border: none;
+    border-radius: 5px;
+    background: #adadad;
+    cursor: pointer;
+    padding: 5px;
+    width: 30px;
+}
+
+button{
+    width: 10%;
 }
 
 button.login-btn {
