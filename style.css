@@ -1,0 +1,145 @@
+body {
+    background-color: rgb(63, 85, 104);
+    margin: 0;
+}
+
+.header {
+    background-color: rgb(27, 40, 56);
+    white-space: nowrap;
+    text-align: center;
+}
+
+#login {
+    color: #c0c0c0;
+    text-align: right;
+    display: block;
+    padding: 10px;
+}
+
+#nav {
+    background-color: rgb(0, 140, 255);
+    padding: 10px;
+    color: white;
+}
+
+#nav details {
+    font-family: Verdana, sans-serif;
+}
+
+#nav summary {
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#nav ul {
+    background-color: rgb(72, 97, 117);
+    color: white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav a {
+    text-decoration: none;
+    color: white;
+}
+
+#nav li {
+    color: white;
+    padding: 5px;
+}
+
+.carousel_items {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#footer {
+    background-color: #2E2E2E;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+#footer img {
+    margin-bottom: 10px;
+    display: block;
+    margin-right: auto;
+}
+
+body.login-page {
+    
+    background-color: #222;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    width: 320px;
+}
+
+.logo {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+}
+
+button.login-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #1b75bc;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button.login-btn:hover {
+    background: #145a8d;
+}
+
+.register-link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #1b75bc;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
