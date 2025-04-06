@@ -1,119 +1,64 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Добро пожаловать в Steam</title>
-    <link rel="shortcut icon" href="img/steam-logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css">
+  <title>Wikipedia</title>
+  <link rel="shortcut icon" href="img/wikipedia.svg" type="image/x-icon">
 </head>
 <body>
-    <div class="header">
-        <center>
-            <a href="https://store.steampowered.com">
-                <img src="img/header_logo.png" height="50">
-            </a>
-        </center>
-        <a id="login" href="singup.html">
-            Log in
-        </a>
+  <header>
+    <img src="img/wikipedia_word.png">
+    <h2>Вільна енциклопедія</h2>
+    <img class="Logo" src="img/Wikipedia.png" alt="Wikipedia Logo" />
+    <form action="https://en.wikipedia.org/wiki/" method="get">
+      <input type="text" name="search" />
+      <button type="submit"><img src="img/search.svg" alt=""></button>
+    </form>
+  </header>
+
+  <div class="languages">
+    <button class="lang1"><a href="https://uk.wikipedia.org/wiki/Головна_сторінка">Українська</a>
+      <span>1,371,000+ статей</span>
+    </button>
+    <button class="lang2"><a href="https://en.wikipedia.org/wiki/Main_Page">English</a><span>6,974,000+ articles</span></button>
+    <button class="lang3"><a href="https://ru.wikipedia.org/wiki/Заглавная_страница">Русский</a>
+      <span>2,036,000+ статей</span>
+    </button>
+    <button class="lang4"><a href="https://es.wikipedia.org/wiki/Wikipedia:Portada">Español</a>
+      <span>2,021,000+ artículos</span>
+    </button>
+    <button class="lang5"><a href="https://zh.wikipedia.org/wiki/Wikipedia:首页">中文</a>
+      <span>1,470,000+ 条目</span>
+    </button>
+    <button class="lang6"><a href="https://pt.wikipedia.org/wiki/Wikipédia:Página_principal">Português</a>
+      <span>1,146,000+ artigos</span>
+    </button>
+    <button class="lang7"><a href="https://it.wikipedia.org/wiki/Pagina_principale">Italiano</a>
+      <span>1,910,000+ voci</span>
+    </button>
+    <button class="lang8"><a href="https://de.wikipedia.org/wiki/Wikipedia:Hauptseite">Deutsch</a>
+      <span>3,001,000+ Artikel</span>
+    </button>
+  </div>
+  <hr>
+  <div class="otherpj" style="grid-template-rows;:auto auto auto">
+    <div>
+      <img src="img/Wikimedia-logo_black.svg">
+      <p>Вікіпедія перебуває на серверах Фонду Вікімедіа — неприбуткової організації, що також опікується рядом інших проєктів.</p>
+      <a href="https://donate.wikimedia.org/w/index.php?title=Special:LandingPage&country=UA&uselang=uk&wmf_medium=portal&wmf_source=portalFooter&wmf_campaign=portalFooter">Ви можете підтримати нашу роботу пожертвою.</a>
     </div>
 
-    <div id="nav">
-        <label for="search"> </label>
-        <input type="text" id="search" placeholder="Введіть слово">
-        <button id="buttonSrc" onclick="search()"> <img src="img/search.png" width="15"> </button>
-        <script>
-            function search() {
-                let searchTerm = document.getElementById('search').value;
-                let url = 'https://store.steampowered.com/search/?term=' + encodeURIComponent(searchTerm) + '&supportedlang=russian%2Cenglish%2Cukrainian&ndl=1'
-                window.location.href = url;
-            }
-        </script>
-        <details>
-            <summary>Магазин</summary>
-            <ul>
-                <li>
-                    <a href="https://store.steampowered.com">
-                        Главная страница
-                    </a>
-                </li>
-                <li>
-                    <a href="https://store.steampowered.com/app/570/Dota_2/">
-                        Ваш список рекомендаций
-                    </a>
-                </li>
-            </ul>
-        </details>    
-        <details>
-            <summary>
-                Новое и интересное
-            </summary>
-            <ul>
-                <li>
-                    <a href="https://store.steampowered.com/charts/topselling/">
-                        Лидеры продаж
-                    </a>
-                </li>
-                <li>
-                    <a href="https://store.steampowered.com/charts/mostplayed/">
-                        Самое популярное
-                    </a>
-                </li>
-            </ul>
-        </details>
-        <details>
-            <summary>
-                Категории
-            </summary>
-            <ul>
-                <li>
-                    <a href="https://store.steampowered.com/genre/Free%20to%20Play/">
-                        Бесплатные
-                    </a>
-                </li>
-                <li>
-                    <a href="https://store.steampowered.com/genre/Early%20Access/">
-                        Ранний доступ
-                    </a>
-                </li>
-                <em>
-                    <p style="color: rgb(0, 174, 255);">Жанры</p>
-                </em>
-                <li>
-                    <a href="https://store.steampowered.com/category/action">
-                        Экшен
-                    </a>
-                </li>
-                <li>
-                    <a href="https://store.steampowered.com/category/simulation">
-                        Симулятор
-                    </a>
-                </li>
-                <li>
-                    <a href="https://store.steampowered.com/category/racing">
-                        Гонки
-                    </a>
-                </li>
-            </ul>
-        </details> 
+    <div>
+      <img src="img/Wikimedia-logo_black.svg">
+      <p>Вікіпедія перебуває на серверах Фонду Вікімедіа — неприбуткової організації, що також опікується рядом інших проєктів.</p>
+      <a href="https://donate.wikimedia.org/w/index.php?title=Special:LandingPage&country=UA&uselang=uk&wmf_medium=portal&wmf_source=portalFooter&wmf_campaign=portalFooter">Ви можете підтримати нашу роботу пожертвою.</a>
     </div>
-    
-    <div class="carousel_items">
-        <a href="https://store.steampowered.com/app/570/Dota_2/">
-            <img src="img/header d2.jpg">
-        </a>
-        <a href="https://store.steampowered.com/app/1551360/Forza_Horizon_5/">
-            <img src="img/header fh5.jpg">
-        </a>
-        <a href="https://store.steampowered.com/app/393380/Squad/">
-            <img src="img/header sq.jpg">
-        </a>
-    </div>
-    
-    <div id="footer">
-        <img src="img/logo_steam_footer.png">
-        <p>© 2025 Valve Corporation. Все права сохранены. Все торговые марки являются собственностью соответствующих владельцев в США и других странах.</p>
-    </div>
+  </div>
+  <hr>
+  <footer>
+    Ця сторінка доступна на умовах ліцензії <a href="https://creativecommons.org/licenses/by-sa/4.0/"> Creative Commons Attribution-ShareAlike</a> <a href="https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use">Умови використання</a> <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy/uk">Політика конфіденційності</a>
+  </footer>
 </body>
 </html>

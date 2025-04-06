@@ -1,184 +1,196 @@
-html {
-    scroll-behavior: smooth;
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Roboto", sans-serif;
+      background-color: #101418;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      margin: 60px;
+      text-align: center;
+    }
+
+    header img {
+      width: 200px;
+    }
+
+    .Logo{
+      margin: 60px 0 60px 0;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-top: 10px;
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-family: 'Times New Roman', Times, serif;
+      margin-top: 10px;
+      font-weight: normal;
+    }
+
+    form {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 300px;
+      background-color: #10141800;
+      color: white;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      border-right-width: 0px;
+      outline: none;
+    }
+
+    input[type=text]:focus {
+      border: 2px solid #3366cc;
+      border-right-width:0px ;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #3366cc;
+      color: white;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+
+    button:hover{
+      background-color: #244992;
+
+    }
+
+    button img{
+      width: 20px;
+    }
+
+    .languages {
+      position: absolute;
+      display: flex;
+      text-align: center;
+    }
+    .lang1  {
+      position: absolute;
+      top: 140px;
+      right: 100px;
+      }
+    .lang2  {
+      position: absolute;
+      top: 140px;
+      left: 100px;
+     }
+    .lang3  {
+      position: absolute;
+      top: 220px;
+      right: 160px;
+      }
+    .lang4  {
+      position: absolute;
+      top: 220px;
+      left: 160px;
+      }
+    .lang5  {
+      position: absolute;
+      top: 300px;
+      right: 170px;
+     }
+    .lang6  {
+      position: absolute;
+      top: 300px;
+      left: 170px;
+     }
+    .lang7  {
+      position: absolute;
+      top: 380px;
+      right: 120px;
+     }
+    .lang8  {
+      position: absolute;
+      top: 380px;
+      left: 120px;
+      }
+
+    .languages a {
+      text-decoration: none;
+      font-family:"Roboto", sans-serif;
+      color: #4d78cf;
+      font-weight: bold;
+      display: block;
+    }
+
+    .languages span{
+      font-size: 0.8rem;
+      font-weight: normal;
+    }
+
+    .languages button{
+      color: #a2a9b1;
+      background-color: #10141800;
+    }
+
+    .languages button:hover{
+      background-color: #36363687;
+    }
+    .languages button a:hover {
+      text-decoration: underline;
+    }
+
+    div{
+      display: inline-block;
+      position: relative;
+      
+    }
+
+    .otherpj{
+      
+    }
+
+    div img{
+      width:40px ;
+    }
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      font-size: 0.8rem;
+      color: #a2a9b1;
+    }
+    footer a::after {
+      content: "\2022";
+      display: inline-block;
+      font-size: 15px;
+      line-height: inherit;
+      margin-left: 5px;
+      margin-right: 5px;
+      color: #a2a9b1;
   }
 
-body {
-    background-color: rgb(63, 85, 104);
-    margin: 0;
-}
-
-.header {
-    background-color: rgb(27, 40, 56);
-    white-space: nowrap;
-    text-align: center;
-}
-
-#login {
-    color: #c0c0c0;
-    text-align: right;
-    display: block;
-    padding: 10px;
-}
-
-#search{
-    width: 20%;
-    padding: 8px;
-    border: 1px solid #555;
-    border-radius: 5px;
-    background: #222;
-    color: white;
-}
-
-#buttonSrc{
-    border: none;
-    border-radius: 5px;
-    background: #1b75bc;
-    cursor: pointer;
-    padding: 8px;
-    width: 40px;
-}
-
-#nav {
-    background-color: rgb(0, 140, 255);
-    padding: 10px;
-    color: white;
-}
-
-#nav details {
-    font-family: Verdana, sans-serif;
-}
-
-#nav summary {
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-#nav ul {
-    background-color: rgb(72, 97, 117);
-    color: white;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-#nav a {
+  a{
+    color: #4d78cf;
     text-decoration: none;
-    color: white;
-}
+    font-size: 0.8rem;
+  }
 
-#nav li {
-    color: white;
-    padding: 5px;
-}
+  p{
+    font-size: 0.8rem;
+  }
 
-.carousel_items {
-    text-align: center;
-    margin: 20px 0;
-}
-
-#footer {
-    background-color: #2E2E2E;
-    text-align: center;
-    padding: 20px;
-    color: white;
-    bottom: 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-#footer img {
-    margin-bottom: 10px;
-    display: block;
-    margin-right: auto;
-}
-
-body.login-page {
-    
-    background-color: #222;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-}
-
-.login-container {
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    color: white;
-    width: 320px;
-}
-
-.logo {
-    width: 100px;
-    margin-bottom: 10px;
-}
-
-h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-.input-group {
-    text-align: left;
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
-input {
-    width: 82%;
-    padding: 8px;
-    border: 1px solid #555;
-    border-radius: 5px;
-    background: #222;
-    color: white;
-}
-
-#buttonEye{
-    border: none;
-    border-radius: 5px;
-    background: #adadad;
-    cursor: pointer;
-    padding: 5px;
-    width: 30px;
-}
-
-button{
-    width: 10%;
-}
-
-button.login-btn {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background: #1b75bc;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button.login-btn:hover {
-    background: #145a8d;
-}
-
-.register-link {
-    margin-top: 15px;
-    font-size: 14px;
-}
-
-.register-link a {
-    color: #1b75bc;
-    text-decoration: none;
-}
-
-.register-link a:hover {
+  footer a:hover{
     text-decoration: underline;
-}
-
+  }
+  hr {
+    border: 1px solid #54595d;
+    width: 97%;
+  }
+    
