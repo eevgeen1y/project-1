@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     
     
     <title>Login</title>
@@ -15,20 +15,35 @@
     <img src="img/wikipedia_word.png">
     <h2>Вільна енциклопедія</h2>
     <img class="Logo" src="img/Wikipedia.png" alt="Wikipedia Logo" />
-    </form>
   </header>
-    <div class="w3-display-container w3-transperent w3-padding">
-      <h3 class="w3-center">Авторизація</h3>
-      <form class="w3-display-container w3-card-4" action="https://uk.wikipedia.org" method="post">    
-        <label class="w3-text-light-grey"><b>Ім'я користувача</b></label>
-        <input class="w3-input w3-border w3-light-grey w3-section" name="username" type="text" required></p>
-        <p>      
-        <label class="w3-text-light-grey"><b>Пароль</b></label>
-        <input class="w3-input w3-border w3-light-grey w3-section" name="password" type="password" required></p>
-        <p>      
-        <button class="w3-btn w3-blue w3-block">Увійти</button></p>
-      </form>
+  <section class="section has-text-justified">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-6">
+          <h3 class="title has-text-centered has-text-white">Авторизація</h3>
+          <form action="https://uk.wikipedia.org" method="post" class="box">
+            <div class="field">
+              <label class="label has-text-dark">Ім'я користувача</label>
+              <div class="control">
+                <input class="input has-text-black" name="username" placeholder="Введіть ім'я користувача" required>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label has-text-dark">Пароль</label>
+              <div class="control">
+                <input class="input" type="password" name="password" placeholder="Введіть пароль" required>
+              </div>
+            </div>
+            <div class="field">
+                <div class="control is-flex is-justify-content-center">
+                <button class="button is-primary">Увійти</button>
+                </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
+  </section>
         
   <hr>
   <footer>

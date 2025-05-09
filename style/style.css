@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   margin: 0;
   padding: 0;
@@ -30,7 +31,7 @@ h1 {
 
 h2 {
   font-size: 1rem;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   margin-top: 10px;
   font-weight: normal;
 }
@@ -41,10 +42,10 @@ h2 {
   justify-content: center;
 }
 
-input[type="text"] {
+input[type=text] {
   padding: 10px;
   width: 300px;
-  background-color: #10141800;
+  background-color: rgba(16, 20, 24, 0);
   color: white;
   border: 1px solid #ccc;
   border-radius: 2px;
@@ -68,7 +69,6 @@ button {
 
 button:hover {
   background-color: #244992;
-
 }
 
 button img {
@@ -144,11 +144,11 @@ button img {
 
 .languages button {
   color: #a2a9b1;
-  background-color: #10141800;
+  background-color: rgba(16, 20, 24, 0);
 }
 
 .languages button:hover {
-  background-color: #36363687;
+  background-color: rgba(54, 54, 54, 0.5294117647);
 }
 
 .languages button a:hover {
@@ -183,7 +183,7 @@ footer {
 }
 
 footer a::after {
-  content: "\2022";
+  content: "•";
   display: inline-block;
   font-size: 15px;
   line-height: inherit;
@@ -219,6 +219,7 @@ hr {
   width: 100px;
   height: 30px;
 }
+
 .login-btn {
   position: absolute;
   top: 10px;
@@ -239,3 +240,5 @@ hr {
 .login-btn:hover {
   background-color: #244992;
 }
+
+/*# sourceMappingURL=style.css.map */
