@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Додавання зображень</title>
+  <style>
+    #gallery {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    #gallery img {
+      width: 300px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Галерея</h1>
+  <div id="gallery"></div>
+
+  <script>
+    setTimeout(() => {
+      function addImages() {
+        let imagesUrl = [
+          "https://picsum.photos/500/500?random=1",
+          "https://picsum.photos/500/500?random=2",
+          "https://picsum.photos/500/500?random=3",
+          "https://picsum.photos/500/500?random=4",
+          "https://picsum.photos/500/500?random=5"
+        ];
+
+        let gallery = document.getElementById("gallery"); 
+        let fragment = document.createDocumentFragment(); 
+
+        imagesUrl.forEach((url, index) => {
+          setTimeout(() => {
+            let img = document.createElement("img");
+            img.src = url;
+            fragment.appendChild(img);
+            gallery.appendChild(fragment); 
+          }, index * 1000);
+        });
+      }
+
+      addImages();
+    }, 5000);
+  </script>
+</body>
+</html>
