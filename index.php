@@ -32,7 +32,8 @@ if (isset($routes[$path])) {
             break;
         case 'login':
             $page_title = 'Авторизація - Wikipedia';
-            require_once __DIR__ . '/controllers/Database.php';
+            require_once __DIR__ . '/models/User.php';
+            require_once __DIR__ . '/models/MyModel.php';
             
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING) ?? '';
@@ -45,12 +46,12 @@ if (isset($routes[$path])) {
                     $password = trim($password);
                     
                     if ($username && $password) {
-                        $user = Database::checkUser($username, $password);
+                        $user = MyModel::authenticateUser($username, $password);
                         if ($user) {
-                            $_SESSION['user_id'] = $user['id'];
-                            $_SESSION['username'] = $user['username'];
-                            $_SESSION['email'] = $user['email'];
-                            $success_message = "Вітаємо, " . htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8') . "! Ви успішно увійшли.";
+                            $_SESSION['user_id'] = $user->getId();
+                            $_SESSION['username'] = $user->getUsername();
+                            $_SESSION['email'] = $user->getEmail();
+                            $success_message = "Вітаємо, " . htmlspecialchars($user->getUsername(), ENT_QUOTES, 'UTF-8') . "! Ви успішно увійшли.";
                         } else {
                             $error_message = "Невірне ім'я користувача або пароль.";
                         }
@@ -74,7 +75,7 @@ if (isset($routes[$path])) {
                         } elseif (strlen($password) < 6) {
                             $error_message = "Пароль має містити мінімум 6 символів.";
                         } else {
-                            $newUser = Database::createUser($username, $email, $password);
+                            $newUser = MyModel::registerUser($username, $email, $password);
                             if ($newUser) {
                                 $success_message = "Реєстрація успішна! Тепер ви можете увійти.";
                             } else {
