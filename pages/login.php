@@ -26,9 +26,21 @@
           <h3 class="title has-text-centered has-text-white">Авторизація</h3>
           <form action="https://uk.wikipedia.org" method="post" class="box">
             <div class="field">
-              <label class="label has-text-dark">Ім'я користувача</label>
+              <label class="label has-text-dark">Ім'я користувача (Login)</label>
               <div class="control">
-                <input class="input has-text-black" name="username" placeholder="Введіть ім'я користувача" required>
+                <input class="input has-text-black" name="username" placeholder="Введіть логін (3-20 символів, латиниця, цифри, _)" required>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label has-text-dark">Email</label>
+              <div class="control">
+                <input class="input has-text-black" type="email" name="email" placeholder="Введіть email" required>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label has-text-dark">Телефон</label>
+              <div class="control">
+                <input class="input has-text-black" type="tel" name="phone" placeholder="+380XXXXXXXXX або 0XXXXXXXXX" required>
               </div>
             </div>
             <div class="field">
@@ -48,6 +60,7 @@
     </div>
   </section>
         
+  <script src="/scripts/validation.js"></script>
   <hr>
   <footer>
     Ця сторінка доступна на умовах ліцензії <a href="https://creativecommons.org/licenses/by-sa/4.0/"> Creative Commons Attribution-ShareAlike</a> <a href="https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use">Умови використання</a> <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy/uk">Політика конфіденційності</a>
