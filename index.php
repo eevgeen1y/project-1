@@ -11,6 +11,7 @@ $routes = [
     'home' => 'pages/home.php',
     'login' => 'pages/login.php',
     'api' => 'pages/api.php',
+    'game' => 'pages/game.php',
     '404' => 'pages/404.php',
 ];
 
@@ -28,6 +29,9 @@ if (isset($routes[$path])) {
             break;
         case 'api':
             $page_title = 'API Demo - Wikipedia';
+            break;
+        case 'game':
+            $page_title = 'Гонка - Wikipedia';
             break;
         default:
             $page_title = 'Wikipedia';

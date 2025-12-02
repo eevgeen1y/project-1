@@ -9,12 +9,20 @@
 </head>
 <body>
   <header>
-    <a href="/login">
-      <button class="login-btn">Увійти</button>
-    </a>
     <img src="/img/wikipedia_word.png">
     <h2>Вільна енциклопедія</h2>
     <img class="Logo" src="/img/Wikipedia.png" alt="Wikipedia Logo" />
+    <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+      <a href="/login">
+        <button class="login-btn">Увійти</button>
+      </a>
+      <a href="/api">
+        <button class="login-btn">API</button>
+      </a>
+      <a href="/game">
+        <button class="login-btn">🎮 Гра</button>
+      </a>
+    </div>
     <form class="form" action="https://en.wikipedia.org/wiki/" method="get">
       <input type="text" name="search" />
       <button type="submit"><img src="/img/search.svg" alt=""></button>
