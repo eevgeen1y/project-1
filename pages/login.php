@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <title><?php echo isset($page_title) ? $page_title : 'Авторизація'; ?></title>
+    <title><?php echo isset($page_title) ? htmlspecialchars($page_title, ENT_QUOTES, 'UTF-8') : 'Авторизація'; ?></title>
     <link rel="shortcut icon" href="/img/Wikipedia.png" type="image/x-icon">
     <style>
         .tabs {
@@ -31,10 +31,10 @@
         <div class="column is-6">
           <div class="tabs is-centered">
             <ul>
-              <li class="<?php echo (!isset($_GET['tab']) || $_GET['tab'] == 'login') ? 'is-active' : ''; ?>">
+              <li class="<?php echo (!isset($_GET['tab']) || htmlspecialchars($_GET['tab'] ?? '', ENT_QUOTES, 'UTF-8') == 'login') ? 'is-active' : ''; ?>">
                 <a href="?tab=login">Увійти</a>
               </li>
-              <li class="<?php echo (isset($_GET['tab']) && $_GET['tab'] == 'register') ? 'is-active' : ''; ?>">
+              <li class="<?php echo (isset($_GET['tab']) && htmlspecialchars($_GET['tab'], ENT_QUOTES, 'UTF-8') == 'register') ? 'is-active' : ''; ?>">
                 <a href="?tab=register">Реєстрація</a>
               </li>
             </ul>
@@ -81,13 +81,13 @@
               <div class="field">
                 <label class="label has-text-dark">Ім'я користувача</label>
                 <div class="control">
-                  <input class="input has-text-black" name="username" placeholder="Введіть ім'я користувача" required>
+                  <input class="input has-text-black" name="username" placeholder="Введіть ім'я користувача" value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username'], ENT_QUOTES, 'UTF-8') : ''; ?>" required>
                 </div>
               </div>
               <div class="field">
                 <label class="label has-text-dark">Email</label>
                 <div class="control">
-                  <input class="input has-text-black" type="email" name="email" placeholder="Введіть email" required>
+                  <input class="input has-text-black" type="email" name="email" placeholder="Введіть email" value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8') : ''; ?>" required>
                 </div>
               </div>
               <div class="field">

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="/styles/style.css">
-  <title><?php echo isset($page_title) ? $page_title : 'Wikipedia'; ?></title>
+  <title><?php echo isset($page_title) ? htmlspecialchars($page_title, ENT_QUOTES, 'UTF-8') : 'Wikipedia'; ?></title>
   <link rel="shortcut icon" href="/img/Wikipedia.png" type="image/x-icon">
 </head>
 <body>

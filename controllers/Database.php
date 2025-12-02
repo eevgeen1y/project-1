@@ -67,14 +67,17 @@ class Database
         try {
             $db = self::getConnection();
             
-            $stmt = $db->prepare("SELECT id, username, email FROM users WHERE username = :username AND password = :password");
+            $stmt = $db->prepare("SELECT id, username, email, password FROM users WHERE username = :username");
             $stmt->execute([
-                ':username' => $username,
-                ':password' => hash('sha256', $password)
+                ':username' => $username
             ]);
             
             $user = $stmt->fetch();
-            return $user ? $user : false;
+            if ($user && password_verify($password, $user['password'])) {
+                unset($user['password']);
+                return $user;
+            }
+            return false;
         } catch (PDOException $e) {
             error_log("Помилка перевірки користувача: " . $e->getMessage());
             return false;
@@ -86,11 +89,13 @@ class Database
         try {
             $db = self::getConnection();
             
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+            
             $stmt = $db->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
             $result = $stmt->execute([
                 ':username' => $username,
                 ':email' => $email,
-                ':password' => hash('sha256', $password)
+                ':password' => $hashedPassword
             ]);
             
             if ($result) {

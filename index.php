@@ -35,11 +35,14 @@ if (isset($routes[$path])) {
             require_once __DIR__ . '/controllers/Database.php';
             
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                $action = $_POST['action'] ?? '';
+                $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING) ?? '';
                 
                 if ($action === 'login') {
-                    $username = $_POST['username'] ?? '';
-                    $password = $_POST['password'] ?? '';
+                    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING) ?? '';
+                    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING) ?? '';
+                    
+                    $username = trim($username);
+                    $password = trim($password);
                     
                     if ($username && $password) {
                         $user = Database::checkUser($username, $password);
@@ -47,7 +50,7 @@ if (isset($routes[$path])) {
                             $_SESSION['user_id'] = $user['id'];
                             $_SESSION['username'] = $user['username'];
                             $_SESSION['email'] = $user['email'];
-                            $success_message = "Вітаємо, " . htmlspecialchars($user['username']) . "! Ви успішно увійшли.";
+                            $success_message = "Вітаємо, " . htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8') . "! Ви успішно увійшли.";
                         } else {
                             $error_message = "Невірне ім'я користувача або пароль.";
                         }
@@ -55,16 +58,28 @@ if (isset($routes[$path])) {
                         $error_message = "Будь ласка, заповніть всі поля.";
                     }
                 } elseif ($action === 'register') {
-                    $username = $_POST['username'] ?? '';
-                    $email = $_POST['email'] ?? '';
-                    $password = $_POST['password'] ?? '';
+                    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING) ?? '';
+                    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL) ?? '';
+                    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING) ?? '';
+                    
+                    $username = trim($username);
+                    $email = trim($email);
+                    $password = trim($password);
                     
                     if ($username && $email && $password) {
-                        $newUser = Database::createUser($username, $email, $password);
-                        if ($newUser) {
-                            $success_message = "Реєстрація успішна! Тепер ви можете увійти.";
+                        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                            $error_message = "Невірний формат email.";
+                        } elseif (strlen($username) < 3) {
+                            $error_message = "Ім'я користувача має містити мінімум 3 символи.";
+                        } elseif (strlen($password) < 6) {
+                            $error_message = "Пароль має містити мінімум 6 символів.";
                         } else {
-                            $error_message = "Помилка реєстрації. Можливо, користувач з таким ім'ям або email вже існує.";
+                            $newUser = Database::createUser($username, $email, $password);
+                            if ($newUser) {
+                                $success_message = "Реєстрація успішна! Тепер ви можете увійти.";
+                            } else {
+                                $error_message = "Помилка реєстрації. Можливо, користувач з таким ім'ям або email вже існує.";
+                            }
                         }
                     } else {
                         $error_message = "Будь ласка, заповніть всі поля.";
