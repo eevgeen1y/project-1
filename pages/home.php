@@ -46,6 +46,9 @@
     </button>
   </div>
   <hr>
+  <div id="images-container" style="padding: 20px; text-align: center; background: #f8f9fa; margin: 20px 0;">
+  </div>
+  <hr>
   <div class="otherpj">
     <div>
       <img src="/img/Wikimedia-logo_black.svg">
