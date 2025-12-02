@@ -10,6 +10,7 @@ Thumbs.db
 *.temp
 *.db
 *.sqlite
+database.db
 config.local.php
 .env
 vendor/

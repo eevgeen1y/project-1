@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    
-    
     <title><?php echo isset($page_title) ? $page_title : 'Авторизація'; ?></title>
     <link rel="shortcut icon" href="/img/Wikipedia.png" type="image/x-icon">
+    <style>
+        .tabs {
+            margin-bottom: 20px;
+        }
+        .message {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
   <header>
@@ -23,26 +29,80 @@
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-6">
-          <h3 class="title has-text-centered has-text-white">Авторизація</h3>
-          <form action="https://uk.wikipedia.org" method="post" class="box">
-            <div class="field">
-              <label class="label has-text-dark">Ім'я користувача</label>
-              <div class="control">
-                <input class="input has-text-black" name="username" placeholder="Введіть ім'я користувача" required>
-              </div>
+          <div class="tabs is-centered">
+            <ul>
+              <li class="<?php echo (!isset($_GET['tab']) || $_GET['tab'] == 'login') ? 'is-active' : ''; ?>">
+                <a href="?tab=login">Увійти</a>
+              </li>
+              <li class="<?php echo (isset($_GET['tab']) && $_GET['tab'] == 'register') ? 'is-active' : ''; ?>">
+                <a href="?tab=register">Реєстрація</a>
+              </li>
+            </ul>
+          </div>
+
+          <?php if (isset($error_message)): ?>
+            <div class="message is-danger">
+              <div class="message-body"><?php echo htmlspecialchars($error_message); ?></div>
             </div>
-            <div class="field">
-              <label class="label has-text-dark">Пароль</label>
-              <div class="control">
-                <input class="input" type="password" name="password" placeholder="Введіть пароль" required>
-              </div>
+          <?php endif; ?>
+
+          <?php if (isset($success_message)): ?>
+            <div class="message is-success">
+              <div class="message-body"><?php echo htmlspecialchars($success_message); ?></div>
             </div>
-            <div class="field">
-                <div class="control is-flex is-justify-content-center">
-                <button class="button is-primary">Увійти</button>
+          <?php endif; ?>
+
+          <?php if (!isset($_GET['tab']) || $_GET['tab'] == 'login'): ?>
+            <h3 class="title has-text-centered has-text-white">Авторизація</h3>
+            <form action="/login" method="post" class="box">
+              <input type="hidden" name="action" value="login">
+              <div class="field">
+                <label class="label has-text-dark">Ім'я користувача</label>
+                <div class="control">
+                  <input class="input has-text-black" name="username" placeholder="Введіть ім'я користувача" required>
                 </div>
-            </div>
-          </form>
+              </div>
+              <div class="field">
+                <label class="label has-text-dark">Пароль</label>
+                <div class="control">
+                  <input class="input" type="password" name="password" placeholder="Введіть пароль" required>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control is-flex is-justify-content-center">
+                  <button class="button is-primary" type="submit">Увійти</button>
+                </div>
+              </div>
+            </form>
+          <?php else: ?>
+            <h3 class="title has-text-centered has-text-white">Реєстрація</h3>
+            <form action="/login?tab=register" method="post" class="box">
+              <input type="hidden" name="action" value="register">
+              <div class="field">
+                <label class="label has-text-dark">Ім'я користувача</label>
+                <div class="control">
+                  <input class="input has-text-black" name="username" placeholder="Введіть ім'я користувача" required>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label has-text-dark">Email</label>
+                <div class="control">
+                  <input class="input has-text-black" type="email" name="email" placeholder="Введіть email" required>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label has-text-dark">Пароль</label>
+                <div class="control">
+                  <input class="input" type="password" name="password" placeholder="Введіть пароль" required>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control is-flex is-justify-content-center">
+                  <button class="button is-primary" type="submit">Зареєструватися</button>
+                </div>
+              </div>
+            </form>
+          <?php endif; ?>
         </div>
       </div>
     </div>
@@ -54,4 +114,3 @@
   </footer>
 </body>
 </html>
-
