@@ -10,6 +10,7 @@ if (empty($path)) {
 $routes = [
     'home' => 'pages/home.php',
     'login' => 'pages/login.php',
+    'api' => 'pages/api.php',
     '404' => 'pages/404.php',
 ];
 
@@ -24,6 +25,9 @@ if (isset($routes[$path])) {
             break;
         case 'login':
             $page_title = 'Авторизація - Wikipedia';
+            break;
+        case 'api':
+            $page_title = 'API Demo - Wikipedia';
             break;
         default:
             $page_title = 'Wikipedia';
