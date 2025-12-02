@@ -59,8 +59,38 @@
       </div>
     </div>
   </section>
+
+  <section class="section has-text-justified">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <h3 class="title has-text-centered has-text-white">Порівняння текстів (Set)</h3>
+          <div class="box">
+            <div class="field">
+              <label class="label has-text-dark">Текст 1</label>
+              <div class="control">
+                <input class="input has-text-black" type="text" id="text-input-1" placeholder="Введіть перший текст" value="Привіт, світ!">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label has-text-dark">Текст 2</label>
+              <div class="control">
+                <input class="input has-text-black" type="text" id="text-input-2" placeholder="Введіть другий текст" value="Привіт, як справи?">
+              </div>
+            </div>
+            <div class="field">
+              <div id="common-words-result" class="notification">
+                <p class="has-text-grey">Введіть текст в обидва поля для порівняння</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
         
   <script src="/scripts/validation.js"></script>
+  <script src="/scripts/set-comparison.js"></script>
   <hr>
   <footer>
     Ця сторінка доступна на умовах ліцензії <a href="https://creativecommons.org/licenses/by-sa/4.0/"> Creative Commons Attribution-ShareAlike</a> <a href="https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use">Умови використання</a> <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy/uk">Політика конфіденційності</a>
