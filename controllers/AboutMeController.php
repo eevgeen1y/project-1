@@ -11,19 +11,19 @@ class AboutMeController
 
     public function __construct()
     {
-        $this->name = "Іван Петренко";
-        $this->email = "ivan.petrenko@example.com";
+        $this->name = "Бобров Евгеній";
+        $this->email = "bobrov.eugeniy@example.com";
         $this->bio = "Студент курсу веб-технологій та PHP. Захоплююся розробкою веб-додатків та вивченням сучасних технологій.";
         $this->skills = ["PHP", "HTML", "CSS", "JavaScript", "MySQL"];
         $this->education = [
-            "Університет" => "Національний університет",
+            "Університет" => "ЕТІ",
             "Факультет" => "Комп'ютерні науки",
             "Група" => "КН-24"
         ];
         $this->experience = [
             [
                 "position" => "Студент-розробник",
-                "company" => "Університет",
+                "company" => "ЕТІ",
                 "period" => "2023 - дотепер",
                 "description" => "Вивчення веб-технологій та створення проєктів"
             ]

@@ -18,12 +18,17 @@
 </head>
 <body>
   <header>
-    <a href="/" style="position: absolute; top: 10px; left: 10px;">
-      <button class="login-btn" style="background-color: #244992;">Головна</button>
-    </a>
     <img src="/img/wikipedia_word.png">
     <h2>Вільна енциклопедія</h2>
     <img class="Logo" src="/img/Wikipedia.png" alt="Wikipedia Logo" />
+    <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+      <a href="/">
+        <button class="login-btn">Головна</button>
+      </a>
+      <a href="/aboutme">
+        <button class="login-btn">Про мене</button>
+      </a>
+    </div>
   </header>
   <section class="section has-text-justified">
     <div class="container">
