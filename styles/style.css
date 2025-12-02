@@ -1,0 +1,244 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #101418;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  margin: 60px;
+  text-align: center;
+}
+
+header img {
+  width: 200px;
+}
+
+.Logo {
+  margin: 60px 0 60px 0;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+h2 {
+  font-size: 1rem;
+  font-family: "Times New Roman", Times, serif;
+  margin-top: 10px;
+  font-weight: normal;
+}
+
+.form {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+input[type=text] {
+  padding: 10px;
+  width: 300px;
+  background-color: rgba(16, 20, 24, 0);
+  color: white;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  border-right-width: 0px;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border: 2px solid #3366cc;
+  border-right-width: 0px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #3366cc;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #244992;
+}
+
+button img {
+  width: 20px;
+}
+
+.languages {
+  position: absolute;
+  display: flex;
+  text-align: center;
+}
+
+.lang1 {
+  position: absolute;
+  top: 140px;
+  right: 100px;
+}
+
+.lang2 {
+  position: absolute;
+  top: 140px;
+  left: 100px;
+}
+
+.lang3 {
+  position: absolute;
+  top: 220px;
+  right: 160px;
+}
+
+.lang4 {
+  position: absolute;
+  top: 220px;
+  left: 160px;
+}
+
+.lang5 {
+  position: absolute;
+  top: 300px;
+  right: 170px;
+}
+
+.lang6 {
+  position: absolute;
+  top: 300px;
+  left: 170px;
+}
+
+.lang7 {
+  position: absolute;
+  top: 380px;
+  right: 120px;
+}
+
+.lang8 {
+  position: absolute;
+  top: 380px;
+  left: 120px;
+}
+
+.languages a {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  color: #4d78cf;
+  font-weight: bold;
+  display: block;
+}
+
+.languages span {
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+.languages button {
+  color: #a2a9b1;
+  background-color: rgba(16, 20, 24, 0);
+}
+
+.languages button:hover {
+  background-color: rgba(54, 54, 54, 0.5294117647);
+}
+
+.languages button a:hover {
+  text-decoration: underline;
+}
+
+div {
+  display: inline-block;
+  position: relative;
+}
+
+.otherpj {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.otherpj div {
+  width: 300px;
+  margin: 50px;
+}
+
+div img {
+  width: 40px;
+}
+
+footer {
+  margin-top: auto;
+  padding: 20px;
+  font-size: 0.8rem;
+  color: #a2a9b1;
+}
+
+footer a::after {
+  content: "•";
+  display: inline-block;
+  font-size: 15px;
+  line-height: inherit;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #a2a9b1;
+}
+
+a {
+  color: #4d78cf;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+p {
+  font-size: 0.8rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: 1px solid #54595d;
+  width: 97%;
+}
+
+.block {
+  margin-right: 100px;
+}
+
+.footimg {
+  width: 100px;
+  height: 30px;
+}
+
+.login-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  background-color: #3366cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.login-btn:hover {
+  background-color: #244992;
+}
+
+.login-btn:hover {
+  background-color: #244992;
+}
+
+
