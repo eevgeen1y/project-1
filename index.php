@@ -10,6 +10,7 @@ if (empty($path)) {
 $routes = [
     'home' => 'pages/home.php',
     'login' => 'pages/login.php',
+    'aboutme' => 'pages/aboutme.php',
     '404' => 'pages/404.php',
 ];
 
@@ -24,6 +25,12 @@ if (isset($routes[$path])) {
             break;
         case 'login':
             $page_title = 'Авторизація - Wikipedia';
+            break;
+        case 'aboutme':
+            $page_title = 'Про мене - Wikipedia';
+            require_once __DIR__ . '/controllers/AboutMeController.php';
+            $controller = new AboutMeController();
+            $data = $controller->getData();
             break;
         default:
             $page_title = 'Wikipedia';
