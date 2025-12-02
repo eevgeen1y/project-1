@@ -12,4 +12,6 @@ Thumbs.db
 *.sqlite
 config.local.php
 .env
+vendor/
+composer.lock
 
