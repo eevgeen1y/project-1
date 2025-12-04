@@ -1,18 +1,3 @@
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-*.log
-*.tmp
-*.temp
-*.db
-*.sqlite
-database.db
-config.local.php
-.env
-vendor/
-composer.lock
+.vs/
+.git/
 
